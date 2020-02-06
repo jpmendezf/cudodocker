@@ -1,0 +1,1 @@
+# cudominer_docker
