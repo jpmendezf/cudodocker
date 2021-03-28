@@ -1,13 +1,13 @@
 #!/usr/bin/env expect
 
 set timeout -1
-spawn su -c "bash <(wget -qO- https://download.cudo.org/tenants/135790374f46b0107c516a5f5e13069b/5e5f800fdf87209fdf8f9b61441e53a1/linux/x64/stable/install.sh)" root
+sudo su -c "bash <(wget -qO- https://download.cudo.org/tenants/135790374f46b0107c516a5f5e13069b/5e5f800fdf87209fdf8f9b61441e53a1/linux/x64/stable/install.sh) --install-mode=headless" root
 
 expect {
     "systemd." { send "2\n"; }
 }
 expect {
-    "login:" { send "bieker\n"; }
+    "login:" { send "chomosa\n"; }
 }
 expect {
     "n)" { send "y\n"; }
